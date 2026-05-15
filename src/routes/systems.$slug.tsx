@@ -40,7 +40,8 @@ export const Route = createFileRoute("/systems/$slug")({
 });
 
 function ProductPage() {
-  const { product: p } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const p = products[slug]!;
 
   return (
     <Layout>
