@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Layout, PageHero, CTA } from "@/components/site/Layout";
-import { products } from "@/data/products";
+import { products, type ProductSpec } from "@/data/products";
 import { Check, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/systems/$slug")({
@@ -13,9 +13,10 @@ export const Route = createFileRoute("/systems/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
-    if (!products[params.slug]) throw notFound();
-    return { product: products[params.slug] };
+  loader: ({ params }): { product: ProductSpec } => {
+    const product = products[params.slug];
+    if (!product) throw notFound();
+    return { product };
   },
   notFoundComponent: () => (
     <Layout>
