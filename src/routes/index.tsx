@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, CTA } from "@/components/site/Layout";
+import { Reveal } from "@/components/site/Reveal";
+import { SpectraNoise } from "@/components/site/SpectraNoise";
 import { HeroBackground } from "@/components/site/HeroBackground";
 import {
   Clock, AlertTriangle, TrendingDown, ArrowRight, Snowflake, FlaskConical,
