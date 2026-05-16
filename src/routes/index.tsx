@@ -73,8 +73,9 @@ function HomePage() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center pt-16">
+      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
         <HeroBackground />
+        <SpectraNoise opacity={0.04} />
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center fade-up">
           <div className="text-xs tracking-[0.4em] text-gold mb-8">
             INDUXTRON · BUSINESS AI SYSTEMS
