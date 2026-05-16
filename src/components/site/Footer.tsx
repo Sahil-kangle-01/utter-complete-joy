@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/induxtron-logo.png";
 
 export function Footer() {
   return (
     <footer style={{ background: "var(--bg-deep)" }} className="border-t border-border mt-24">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
         <div>
+          <img src={logo} alt="Induxtron" className="h-12 w-auto mb-3" />
           <div className="font-display font-bold tracking-wider text-foreground text-lg">
             INDUXTRON
           </div>
