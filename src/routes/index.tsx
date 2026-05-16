@@ -131,13 +131,15 @@ function HomePage() {
               { Icon: AlertTriangle, h: "Calibration certificates expire.", b: "Clients quietly leave for competitors." },
               { Icon: TrendingDown, h: "Key accounts go silent.", b: "Nobody notices for months." },
             ].map(({ Icon, h, b }, i) => (
-              <div key={i} className="glass-card p-8 rounded-xl">
-                <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
-                  <Icon className="text-primary" size={22} />
+              <Reveal key={i} delay={i * 120} variant="scaleFade">
+                <div className="glass-card p-8 rounded-xl h-full">
+                  <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
+                    <Icon className="text-primary" size={22} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{h}</h3>
+                  <p className="text-muted-foreground">{b}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{h}</h3>
-                <p className="text-muted-foreground">{b}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
