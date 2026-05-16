@@ -154,25 +154,26 @@ function HomePage() {
             <p className="mt-4 text-muted-foreground">Each system targets one critical revenue leak in your business.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {systems.map((s) => (
-              <Link
-                key={s.slug}
-                to="/systems/$slug"
-                params={{ slug: s.slug }}
-                className="glass-card p-7 rounded-xl group flex flex-col"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center mb-5">
-                  <span className="text-primary font-mono text-sm">0{systems.indexOf(s) + 1}</span>
-                </div>
-                <div className="text-gold text-sm font-mono tracking-wider mb-1">{s.name}</div>
-                <h3 className="text-xl font-bold mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm mb-6 flex-1">{s.line}</p>
-                <div className="font-mono text-2xl text-gradient mb-1">{s.roi}</div>
-                <div className="text-xs text-muted-foreground mb-4">Build: {s.build}</div>
-                <span className="inline-flex items-center gap-2 text-primary text-sm group-hover:gap-3 transition-all">
-                  Learn more <ArrowRight size={14} />
-                </span>
-              </Link>
+            {systems.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 90} variant="scaleFade">
+                <Link
+                  to="/systems/$slug"
+                  params={{ slug: s.slug }}
+                  className="glass-card p-7 rounded-xl group flex flex-col h-full"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center mb-5">
+                    <span className="text-primary font-mono text-sm">0{i + 1}</span>
+                  </div>
+                  <div className="text-gold text-sm font-mono tracking-wider mb-1">{s.name}</div>
+                  <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-6 flex-1">{s.line}</p>
+                  <div className="font-mono text-2xl text-gradient mb-1">{s.roi}</div>
+                  <div className="text-xs text-muted-foreground mb-4">Build: {s.build}</div>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm group-hover:gap-3 transition-all">
+                    Learn more <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
