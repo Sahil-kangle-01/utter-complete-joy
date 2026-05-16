@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode } from "react";
 
 type Variant = "fadeUp" | "fadeLeft" | "fadeRight" | "scaleFade";
 
