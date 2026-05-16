@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, CTA } from "@/components/site/Layout";
+import { Reveal } from "@/components/site/Reveal";
+import { SpectraNoise } from "@/components/site/SpectraNoise";
 import { HeroBackground } from "@/components/site/HeroBackground";
 import {
   Clock, AlertTriangle, TrendingDown, ArrowRight, Snowflake, FlaskConical,
@@ -71,8 +73,9 @@ function HomePage() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center pt-16">
+      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
         <HeroBackground />
+        <SpectraNoise opacity={0.04} />
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center fade-up">
           <div className="text-xs tracking-[0.4em] text-gold mb-8">
             INDUXTRON · BUSINESS AI SYSTEMS
@@ -128,13 +131,15 @@ function HomePage() {
               { Icon: AlertTriangle, h: "Calibration certificates expire.", b: "Clients quietly leave for competitors." },
               { Icon: TrendingDown, h: "Key accounts go silent.", b: "Nobody notices for months." },
             ].map(({ Icon, h, b }, i) => (
-              <div key={i} className="glass-card p-8 rounded-xl">
-                <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
-                  <Icon className="text-primary" size={22} />
+              <Reveal key={i} delay={i * 120} variant="scaleFade">
+                <div className="glass-card p-8 rounded-xl h-full">
+                  <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
+                    <Icon className="text-primary" size={22} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{h}</h3>
+                  <p className="text-muted-foreground">{b}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{h}</h3>
-                <p className="text-muted-foreground">{b}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -149,25 +154,26 @@ function HomePage() {
             <p className="mt-4 text-muted-foreground">Each system targets one critical revenue leak in your business.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {systems.map((s) => (
-              <Link
-                key={s.slug}
-                to="/systems/$slug"
-                params={{ slug: s.slug }}
-                className="glass-card p-7 rounded-xl group flex flex-col"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center mb-5">
-                  <span className="text-primary font-mono text-sm">0{systems.indexOf(s) + 1}</span>
-                </div>
-                <div className="text-gold text-sm font-mono tracking-wider mb-1">{s.name}</div>
-                <h3 className="text-xl font-bold mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm mb-6 flex-1">{s.line}</p>
-                <div className="font-mono text-2xl text-gradient mb-1">{s.roi}</div>
-                <div className="text-xs text-muted-foreground mb-4">Build: {s.build}</div>
-                <span className="inline-flex items-center gap-2 text-primary text-sm group-hover:gap-3 transition-all">
-                  Learn more <ArrowRight size={14} />
-                </span>
-              </Link>
+            {systems.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 90} variant="scaleFade">
+                <Link
+                  to="/systems/$slug"
+                  params={{ slug: s.slug }}
+                  className="glass-card p-7 rounded-xl group flex flex-col h-full"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center mb-5">
+                    <span className="text-primary font-mono text-sm">0{i + 1}</span>
+                  </div>
+                  <div className="text-gold text-sm font-mono tracking-wider mb-1">{s.name}</div>
+                  <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-6 flex-1">{s.line}</p>
+                  <div className="font-mono text-2xl text-gradient mb-1">{s.roi}</div>
+                  <div className="text-xs text-muted-foreground mb-4">Build: {s.build}</div>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm group-hover:gap-3 transition-all">
+                    Learn more <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -201,13 +207,22 @@ function HomePage() {
             <h2 className="text-3xl md:text-5xl font-bold">Built for the industries that built India.</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {industries.map(({ name, icon: Icon }) => (
-              <div key={name} className="glass-card p-6 rounded-xl flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                  <Icon className="text-gold" size={22} />
+            {industries.map(({ name, icon: Icon }, idx) => (
+              <Reveal key={name} delay={idx * 60} variant="scaleFade">
+                <div className="xray-card glass-card rounded-xl h-full">
+                  <div className="xray-surface p-6 flex items-center gap-4 h-full">
+                    <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                      <Icon className="text-gold" size={22} />
+                    </div>
+                    <div className="font-semibold">{name}</div>
+                  </div>
+                  <div className="xray-reveal p-6 flex flex-col justify-center bg-bg-deep/90">
+                    <div className="text-[10px] tracking-[0.3em] text-gold mb-1">DEPLOYED</div>
+                    <div className="font-mono text-2xl text-gradient">+38%</div>
+                    <div className="text-xs text-muted-foreground mt-1">avg revenue lift in {name.split(" ")[0]}</div>
+                  </div>
                 </div>
-                <div className="font-semibold">{name}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
