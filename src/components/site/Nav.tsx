@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/induxtron-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -34,8 +35,9 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display font-bold tracking-wider text-foreground">
-          INDUXTRON
+        <Link to="/" className="flex items-center gap-2 font-display font-bold tracking-wider text-foreground">
+          <img src={logo} alt="Induxtron" className="h-8 w-auto" />
+          <span className="hidden sm:inline">INDUXTRON</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm">

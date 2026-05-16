@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHero, CTA } from "@/components/site/Layout";
 import { Linkedin, Zap, Target, Shield, Award } from "lucide-react";
+import sahilPhoto from "@/assets/sahil-kangle.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -78,19 +79,25 @@ function AboutPage() {
       <section className="py-20 px-6 border-t border-border">
         <div className="max-w-4xl mx-auto glass-card rounded-2xl p-10 md:p-14 grid md:grid-cols-3 gap-10 items-center">
           <div className="md:col-span-1">
-            <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/30 to-gold/20 flex items-center justify-center">
-              <span className="font-display text-5xl text-gradient font-bold">SK</span>
+            <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/30 to-gold/20">
+              <img
+                src={sahilPhoto}
+                alt="Sahil Kangle, Founder of Induxtron"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="md:col-span-2">
             <div className="text-xs tracking-[0.3em] text-gold mb-3">FOUNDER</div>
-            <h3 className="text-3xl font-bold mb-2">Sahil Khan</h3>
+            <h3 className="text-3xl font-bold mb-2">Sahil Kangle</h3>
             <p className="text-muted-foreground mb-5">
               Founder, Induxtron Business Systems. Building AI infrastructure for the
               industrial businesses of Maharashtra and beyond.
             </p>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sahil-kangle"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary text-sm hover:gap-3 transition-all"
             >
               <Linkedin size={16} /> Connect on LinkedIn

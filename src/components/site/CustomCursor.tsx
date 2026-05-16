@@ -10,9 +10,13 @@ export function CustomCursor() {
     if (typeof window === "undefined") return;
     if ("ontouchstart" in window || window.matchMedia("(pointer: coarse)").matches) return;
     setEnabled(true);
+  }, []);
 
-    const dot = dotRef.current!;
-    const ring = ringRef.current!;
+  useEffect(() => {
+    if (!enabled) return;
+    const dot = dotRef.current;
+    const ring = ringRef.current;
+    if (!dot || !ring) return;
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
     let rx = mx;
@@ -51,7 +55,7 @@ export function CustomCursor() {
       cancelAnimationFrame(raf);
       document.body.style.cursor = "";
     };
-  }, []);
+  }, [enabled]);
 
   if (!enabled) return null;
   return (
