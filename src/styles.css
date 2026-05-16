@@ -139,6 +139,57 @@
     50% { opacity: 1; }
   }
   .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+  /* Scroll-triggered reveal variants */
+  .reveal-fade-up,
+  .reveal-fade-left,
+  .reveal-fade-right,
+  .reveal-scale-fade {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-fade-up { transform: translateY(40px); }
+  .reveal-fade-left { transform: translateX(-40px); }
+  .reveal-fade-right { transform: translateX(40px); }
+  .reveal-scale-fade { transform: scale(0.94) translateY(20px); }
+  .reveal-fade-up.is-visible,
+  .reveal-fade-left.is-visible,
+  .reveal-fade-right.is-visible,
+  .reveal-scale-fade.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* X-Ray hover card */
+  .xray-card { position: relative; overflow: hidden; isolation: isolate; }
+  .xray-card .xray-surface,
+  .xray-card .xray-reveal {
+    transition: clip-path 0.6s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.4s ease;
+  }
+  .xray-card .xray-surface { clip-path: inset(0 0 0 0); }
+  .xray-card .xray-reveal {
+    position: absolute; inset: 0;
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  .xray-card:hover .xray-surface { clip-path: inset(0 0 100% 0); opacity: 0; }
+  .xray-card:hover .xray-reveal { clip-path: inset(0 0 0 0); opacity: 1; }
+  .xray-card::after {
+    content: "";
+    position: absolute; left: 0; right: 0; top: -2px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    box-shadow: 0 0 24px 4px var(--gold);
+    transition: top 0.6s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.2s;
+    pointer-events: none;
+  }
+  .xray-card:hover::after { top: 100%; opacity: 1; }
+
+  /* Micro interactions */
+  .lift-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .lift-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 }
 
 @font-face {
