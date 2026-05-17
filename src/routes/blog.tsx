@@ -43,10 +43,10 @@ function BlogPage() {
         sub="Notes from the field. Written by the people who deploy these systems for a living."
       />
 
-      <section className="py-8 px-6">
+      <section className="py-8 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-2 justify-center">
           {categories.map((c) => (
-            <span key={c} className="px-4 py-2 rounded-full text-sm border border-border text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+            <span key={c} className="px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm border border-border text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
               {c}
             </span>
           ))}
