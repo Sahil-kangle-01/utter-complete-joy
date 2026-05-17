@@ -90,11 +90,11 @@ function ProductPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Everything your team needs.
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {p.capabilities.map((c, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 flex gap-4">
+              <div key={i} className="glass-card rounded-xl p-5 sm:p-6 flex gap-4">
                 <Check className="text-primary shrink-0 mt-0.5" size={20} />
-                <p className="text-foreground/90">{c}</p>
+                <p className="text-sm sm:text-base text-foreground/90">{c}</p>
               </div>
             ))}
           </div>
