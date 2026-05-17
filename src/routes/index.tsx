@@ -66,7 +66,7 @@ function CountUp({ to, prefix = "", suffix = "" }: { to: number; prefix?: string
     obs.observe(el);
     return () => obs.disconnect();
   }, [to]);
-  return <div ref={ref} className="font-display text-4xl md:text-6xl font-bold text-gradient">{prefix}{val}{suffix}</div>;
+  return <div ref={ref} className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-gradient">{prefix}{val}{suffix}</div>;
 }
 
 function HomePage() {
