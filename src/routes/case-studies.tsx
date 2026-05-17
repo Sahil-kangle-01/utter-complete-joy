@@ -37,13 +37,13 @@ function CaseStudiesPage() {
         sub="Each engagement is run by Sahil personally. Numbers below are aggregated and anonymised; full case studies available on request."
       />
 
-      <section className="py-8 px-6">
+      <section className="py-8 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-2 justify-center">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm border transition-colors ${
                 active === f
                   ? "bg-primary text-primary-foreground border-primary"
                   : "border-border text-muted-foreground hover:text-foreground"
