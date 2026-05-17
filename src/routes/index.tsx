@@ -120,24 +120,24 @@ function HomePage() {
       </section>
 
       {/* PROBLEM */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto leading-tight">
             Indian industry runs on manual processes. <span className="text-gradient">That ends now.</span>
           </h2>
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
+          <div className="mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {[
               { Icon: Clock, h: "RFQs answered in 48 hours.", b: "You lose to whoever replied first." },
               { Icon: AlertTriangle, h: "Calibration certificates expire.", b: "Clients quietly leave for competitors." },
               { Icon: TrendingDown, h: "Key accounts go silent.", b: "Nobody notices for months." },
             ].map(({ Icon, h, b }, i) => (
               <Reveal key={i} delay={i * 120} variant="scaleFade">
-                <div className="glass-card p-8 rounded-xl h-full">
-                  <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
+                <div className="glass-card p-6 sm:p-8 rounded-xl h-full">
+                  <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-5 sm:mb-6">
                     <Icon className="text-primary" size={22} />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{h}</h3>
-                  <p className="text-muted-foreground">{b}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">{h}</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base">{b}</p>
                 </div>
               </Reveal>
             ))}
