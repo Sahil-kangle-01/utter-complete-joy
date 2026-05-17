@@ -54,7 +54,7 @@ function ProductPage() {
       />
 
       {/* Problem / Solution */}
-      <section className="py-20 px-6 border-t border-border">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
           <div className="glass-card rounded-2xl p-8">
             <div className="text-xs tracking-[0.3em] text-destructive mb-3">THE PROBLEM</div>
@@ -69,7 +69,7 @@ function ProductPage() {
 
       {/* Flow */}
       {p.flow && (
-        <section className="py-20 px-6 border-t border-border">
+        <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">How it works.</h2>
             <ol className="space-y-4">
@@ -85,7 +85,7 @@ function ProductPage() {
       )}
 
       {/* Capabilities */}
-      <section className="py-20 px-6 border-t border-border">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Everything your team needs.
@@ -103,7 +103,7 @@ function ProductPage() {
 
       {/* Table */}
       {p.table && (
-        <section className="py-20 px-6 border-t border-border">
+        <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{p.table.title}</h2>
             <div className="glass-card rounded-2xl overflow-hidden">
@@ -137,7 +137,7 @@ function ProductPage() {
       )}
 
       {/* Impact */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-xs tracking-[0.3em] text-gold mb-6">REVENUE IMPACT</div>
           <div className="font-display text-5xl md:text-7xl font-bold text-gradient mb-4">
@@ -151,7 +151,7 @@ function ProductPage() {
       </section>
 
       {/* Other systems */}
-      <section className="py-16 px-6 border-t border-border">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="text-xs tracking-[0.3em] text-gold mb-6">OTHER SYSTEMS</div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
