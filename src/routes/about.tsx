@@ -30,8 +30,8 @@ function AboutPage() {
         sub="Built in Aurangabad. For Aurangabad. For India."
       />
 
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
           <p>
             Induxtron started from watching manufacturing businesses lose revenue to manual
             processes — slow quotes, forgotten renewals, missed tenders. The opportunities were
