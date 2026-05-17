@@ -31,32 +31,32 @@ export function PageHero({
   stats?: string[];
 }) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-25" />
       <div
         className="absolute inset-0 opacity-60"
         style={{ background: "var(--gradient-glow)" }}
       />
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <Reveal>
           {tag && (
-            <div className="text-xs tracking-[0.3em] text-gold mb-6">{tag}</div>
+            <div className="text-[10px] sm:text-xs tracking-[0.3em] text-gold mb-4 sm:mb-6">{tag}</div>
           )}
-          <h1 className="text-4xl md:text-6xl font-bold leading-[1.05]">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.05]">
             {title}{" "}
             {highlight && <span className="text-gradient">{highlight}</span>}
           </h1>
           {sub && (
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {sub}
             </p>
           )}
         </Reveal>
         {stats && stats.length > 0 && (
           <Reveal delay={150}>
-            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-mono text-text-accent">
+            <div className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 text-xs sm:text-sm font-mono text-text-accent">
               {stats.map((s, i) => (
-                <div key={i} className="flex items-center gap-8">
+                <div key={i} className="flex items-center gap-6 sm:gap-8">
                   <span>{s}</span>
                   {i < stats.length - 1 && <span className="text-border">|</span>}
                 </div>
