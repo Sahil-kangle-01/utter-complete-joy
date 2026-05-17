@@ -32,14 +32,14 @@ function ApplyPage() {
   if (submitted) {
     return (
       <Layout>
-        <section className="pt-40 pb-32 px-6">
+        <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
           <div className="max-w-2xl mx-auto text-center fade-up">
             <CheckCircle2 className="mx-auto text-gold mb-6" size={56} />
-            <h1 className="text-4xl md:text-5xl font-bold mb-5">Application received.</h1>
-            <p className="text-lg text-muted-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5">Application received.</h1>
+            <p className="text-base sm:text-lg text-muted-foreground mb-3">
               We will review and respond within 48 hours.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm sm:text-base">
               In the meantime, explore our <a href="/case-studies" className="text-primary hover:underline">case studies</a>.
             </p>
           </div>
