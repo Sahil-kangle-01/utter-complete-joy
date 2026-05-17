@@ -57,12 +57,12 @@ function ApplyPage() {
         sub="We review every application personally. We work with those who are serious about transformation — not just those looking for a tool."
       />
 
-      <section className="px-6 pb-24">
+      <section className="px-4 sm:px-6 pb-20 sm:pb-24">
         <form
           onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-          className="max-w-3xl mx-auto glass-card rounded-2xl p-8 md:p-12 space-y-6"
+          className="max-w-3xl mx-auto glass-card rounded-2xl p-6 sm:p-8 md:p-12 space-y-6"
         >
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <Input label="Full Name" name="name" required />
             <Input label="Designation / Role" name="role" required />
             <Input label="Company Name" name="company" required />
