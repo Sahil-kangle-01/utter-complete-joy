@@ -110,7 +110,7 @@ function ApplyPage() {
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <Select label="How did you hear about Induxtron?" name="source" options={sources} />
             <Input label="Phone (WhatsApp preferred)" name="phone" type="tel" required />
             <Input label="Email" name="email" type="email" required />
