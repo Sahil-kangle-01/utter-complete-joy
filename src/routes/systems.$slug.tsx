@@ -55,14 +55,14 @@ function ProductPage() {
 
       {/* Problem / Solution */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-          <div className="glass-card rounded-2xl p-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="glass-card rounded-2xl p-6 sm:p-8">
             <div className="text-xs tracking-[0.3em] text-destructive mb-3">THE PROBLEM</div>
-            <p className="text-lg text-muted-foreground leading-relaxed">{p.problem}</p>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">{p.problem}</p>
           </div>
-          <div className="glass-card rounded-2xl p-8" style={{ borderColor: "var(--gold)" }}>
+          <div className="glass-card rounded-2xl p-6 sm:p-8" style={{ borderColor: "var(--gold)" }}>
             <div className="text-xs tracking-[0.3em] text-gold mb-3">THE SOLUTION</div>
-            <p className="text-lg text-foreground leading-relaxed">{p.solution}</p>
+            <p className="text-base sm:text-lg text-foreground leading-relaxed">{p.solution}</p>
           </div>
         </div>
       </section>
