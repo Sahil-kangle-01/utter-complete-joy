@@ -77,21 +77,21 @@ export function CTA({
   body?: string;
 }) {
   return (
-    <section className="relative py-24 overflow-hidden cta-exclusive">
+    <section className="relative py-16 sm:py-24 overflow-hidden cta-exclusive">
       <div
         className="absolute inset-0"
         style={{ background: "var(--gradient-glow)" }}
       />
-      <div className="relative max-w-3xl mx-auto px-6 text-center">
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <Reveal>
-          <h2 className="text-3xl md:text-5xl font-bold">{title}</h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">{body}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">{title}</h2>
+          <p className="mt-5 text-sm sm:text-base text-muted-foreground leading-relaxed">{body}</p>
           <p className="mt-3 text-xs text-muted-foreground">
             4 businesses active. 2 application spots currently open in Aurangabad.
           </p>
           <a
             href="/apply"
-            className="inline-flex items-center mt-8 px-8 py-4 rounded-md bg-gold text-gold-foreground font-semibold hover:opacity-90 hover:scale-[1.03] transition-all"
+            className="inline-flex items-center mt-7 sm:mt-8 px-6 sm:px-8 py-3 sm:py-4 rounded-md bg-gold text-gold-foreground font-semibold hover:opacity-90 hover:scale-[1.03] transition-all"
           >
             Apply for Access
           </a>
