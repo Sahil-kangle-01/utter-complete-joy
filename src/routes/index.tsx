@@ -28,12 +28,12 @@ const systems = [
 ] as const;
 
 const industries = [
-  { name: "HVAC & Refrigeration", icon: Snowflake },
-  { name: "Pharma Manufacturing", icon: FlaskConical },
-  { name: "Auto Components", icon: Cog },
-  { name: "Industrial Equipment", icon: Factory },
-  { name: "Calibration Labs", icon: Ruler },
-  { name: "Cold Chain & Logistics", icon: Truck },
+  { name: "HVAC & Refrigeration", icon: Snowflake, stat: "18% → 35%", label: "RFQ win rate" },
+  { name: "Pharma Manufacturing", icon: FlaskConical, stat: "Zero lapses", label: "cert renewals missed" },
+  { name: "Auto Components", icon: Cog, stat: "<60s", label: "quote turnaround" },
+  { name: "Industrial Equipment", icon: Factory, stat: "0.5% → 8%", label: "site conversion" },
+  { name: "Calibration Labs", icon: Ruler, stat: "₹34.5L", label: "ARR recovered" },
+  { name: "Cold Chain & Logistics", icon: Truck, stat: "15% → 7%", label: "churn reduction" },
 ];
 
 const trustItems = [
@@ -207,7 +207,7 @@ function HomePage() {
             <h2 className="text-3xl md:text-5xl font-bold">Built for the industries that built India.</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {industries.map(({ name, icon: Icon }, idx) => (
+            {industries.map(({ name, icon: Icon, stat, label }, idx) => (
               <Reveal key={name} delay={idx * 60} variant="scaleFade">
                 <div className="xray-card glass-card rounded-xl h-full">
                   <div className="xray-surface p-6 flex items-center gap-4 h-full">
@@ -217,9 +217,8 @@ function HomePage() {
                     <div className="font-semibold">{name}</div>
                   </div>
                   <div className="xray-reveal p-6 flex flex-col justify-center bg-bg-deep/90">
-                    <div className="text-[10px] tracking-[0.3em] text-gold mb-1">DEPLOYED</div>
-                    <div className="font-mono text-2xl text-gradient">+38%</div>
-                    <div className="text-xs text-muted-foreground mt-1">avg revenue lift in {name.split(" ")[0]}</div>
+                    <div className="font-mono text-2xl text-gradient">{stat}</div>
+                    <div className="text-xs text-muted-foreground mt-1">{label}</div>
                   </div>
                 </div>
               </Reveal>
