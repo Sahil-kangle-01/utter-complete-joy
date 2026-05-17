@@ -25,9 +25,9 @@ function ContactPage() {
         sub="We respond to every message within 24 hours. For faster turnaround, WhatsApp is best."
       />
 
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
-          <div className="md:col-span-3 glass-card rounded-2xl p-8">
+      <section className="py-10 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-6 sm:gap-8">
+          <div className="md:col-span-3 glass-card rounded-2xl p-6 sm:p-8">
             {sent ? (
               <div className="text-center py-12">
                 <div className="text-2xl font-bold mb-3">Message received.</div>
