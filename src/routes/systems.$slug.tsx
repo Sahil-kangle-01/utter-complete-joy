@@ -140,12 +140,12 @@ function ProductPage() {
       <section className="py-16 sm:py-24 px-4 sm:px-6 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-xs tracking-[0.3em] text-gold mb-6">REVENUE IMPACT</div>
-          <div className="font-display text-5xl md:text-7xl font-bold text-gradient mb-4">
+          <div className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gradient mb-4 break-words">
             {p.impact.value}
           </div>
-          <p className="text-xl text-foreground mb-6">{p.impact.label}</p>
+          <p className="text-lg sm:text-xl text-foreground mb-6">{p.impact.label}</p>
           {p.impact.details.map((d, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mt-3">{d}</p>
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3">{d}</p>
           ))}
         </div>
       </section>
