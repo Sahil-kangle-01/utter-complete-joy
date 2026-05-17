@@ -53,14 +53,14 @@ function BlogPage() {
         </div>
       </section>
 
-      <section className="py-8 px-6">
+      <section className="py-8 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <article className="glass-card rounded-2xl p-8 md:p-12 grid md:grid-cols-5 gap-8 items-center">
+          <article className="glass-card rounded-2xl p-6 sm:p-8 md:p-12 grid md:grid-cols-5 gap-6 sm:gap-8 items-center">
             <div className="md:col-span-2 aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/40 to-gold/30 grid-bg" />
             <div className="md:col-span-3">
-              <div className="text-xs tracking-[0.3em] text-gold mb-3">FEATURED · {featured.category}</div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">{featured.title}</h2>
-              <p className="text-muted-foreground mb-6">{featured.excerpt}</p>
+              <div className="text-[10px] sm:text-xs tracking-[0.3em] text-gold mb-3">FEATURED · {featured.category}</div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">{featured.title}</h2>
+              <p className="text-sm sm:text-base text-muted-foreground mb-6">{featured.excerpt}</p>
               <div className="flex items-center gap-4 text-xs text-muted-foreground mb-6">
                 <span className="inline-flex items-center gap-1.5"><Clock size={12} /> {featured.read}</span>
                 <span>·</span>
