@@ -180,43 +180,49 @@ function HomePage() {
       </section>
 
       {/* ROI NUMBERS */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
           <div className="text-xs tracking-[0.3em] text-gold mb-4">MEASURABLE IMPACT</div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-10">
             {[
               { v: 85, p: "₹", s: "L/yr", l: "QuoteGPT revenue lift" },
               { v: 345, p: "₹", s: "L ARR", l: "CertAlert recurring", small: true },
               { v: 135, p: "₹", s: " Cr/yr", l: "TenderRadar wins" },
               { v: 96, p: "₹", s: "L saved", l: "ChurnRadar retention" },
             ].map((n, i) => (
-              <div key={i} className="px-4">
+              <div key={i} className="px-2 sm:px-4">
                 <CountUp to={n.v} prefix={n.p} suffix={n.s} />
-                <div className="mt-3 text-sm text-muted-foreground">{n.l}</div>
+                <div className="mt-3 text-xs sm:text-sm text-muted-foreground">{n.l}</div>
               </div>
             ))}
           </div>
-          <p className="mt-12 text-muted-foreground">Across 5 AI systems. Measurable ROI within 90 days.</p>
+          <p className="mt-10 sm:mt-12 text-muted-foreground text-sm sm:text-base">Across 5 AI systems. Measurable ROI within 90 days.</p>
         </div>
       </section>
 
       {/* INDUSTRIES */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold">Built for the industries that built India.</h2>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">Built for the industries that built India.</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {industries.map(({ name, icon: Icon, stat, label }, idx) => (
               <Reveal key={name} delay={idx * 60} variant="scaleFade">
-                <div className="xray-card glass-card rounded-xl h-full">
-                  <div className="xray-surface p-6 flex items-center gap-4 h-full">
+                <div className="xray-card glass-card rounded-xl h-full min-h-[120px]">
+                  <div className="xray-surface p-5 sm:p-6 flex items-center gap-4 h-full">
                     <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
                       <Icon className="text-gold" size={22} />
                     </div>
-                    <div className="font-semibold">{name}</div>
+                    <div>
+                      <div className="font-semibold text-sm sm:text-base">{name}</div>
+                      <div className="md:hidden mt-1">
+                        <span className="font-mono text-base text-gradient">{stat}</span>
+                        <span className="text-xs text-muted-foreground ml-2">{label}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="xray-reveal p-6 flex flex-col justify-center bg-bg-deep/90">
+                  <div className="xray-reveal p-6 hidden md:flex flex-col justify-center bg-bg-deep/90">
                     <div className="font-mono text-2xl text-gradient">{stat}</div>
                     <div className="text-xs text-muted-foreground mt-1">{label}</div>
                   </div>
