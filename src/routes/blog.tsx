@@ -74,13 +74,13 @@ function BlogPage() {
         </div>
       </section>
 
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-10 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {posts.map((p, i) => (
-            <article key={i} className="glass-card rounded-2xl p-6 flex flex-col">
+            <article key={i} className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col">
               <div className="aspect-[16/9] rounded-lg bg-gradient-to-br from-primary/20 to-secondary mb-5 grid-bg" />
-              <div className="text-xs tracking-[0.2em] text-gold mb-2">{p.category.toUpperCase()}</div>
-              <h3 className="font-bold mb-3 flex-1">{p.title}</h3>
+              <div className="text-[10px] sm:text-xs tracking-[0.2em] text-gold mb-2">{p.category.toUpperCase()}</div>
+              <h3 className="font-bold mb-3 flex-1 text-sm sm:text-base">{p.title}</h3>
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>{p.date}</span>
                 <span className="inline-flex items-center gap-1.5"><Clock size={12} /> {p.read}</span>
