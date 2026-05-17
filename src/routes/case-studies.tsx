@@ -55,32 +55,32 @@ function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+      <section className="py-10 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-5 sm:gap-6">
           {visible.map((c) => (
-            <article key={c.id} className="glass-card rounded-2xl p-8">
-              <div className="flex items-center justify-between mb-5">
+            <article key={c.id} className="glass-card rounded-2xl p-6 sm:p-8">
+              <div className="flex items-center justify-between gap-3 mb-5 flex-wrap">
                 <div>
                   <div className="font-semibold">{c.company}</div>
                   <div className="text-xs text-muted-foreground">{c.city} · {c.industry}</div>
                 </div>
                 <span className="text-xs px-3 py-1 rounded-full bg-primary/15 text-text-accent border border-primary/30">{c.system}</span>
               </div>
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                <div>
-                  <div className="text-xs text-muted-foreground">Before</div>
-                  <div className="font-mono text-sm mt-1">{c.before}</div>
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6">
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">Before</div>
+                  <div className="font-mono text-xs sm:text-sm mt-1 break-words">{c.before}</div>
                 </div>
-                <div>
-                  <div className="text-xs text-gold">After</div>
-                  <div className="font-mono text-sm mt-1">{c.after}</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-gold">After</div>
+                  <div className="font-mono text-xs sm:text-sm mt-1 break-words">{c.after}</div>
                 </div>
-                <div>
-                  <div className="text-xs text-muted-foreground">Impact</div>
-                  <div className="font-mono text-sm mt-1 text-gradient font-bold">{c.roi}</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">Impact</div>
+                  <div className="font-mono text-xs sm:text-sm mt-1 text-gradient font-bold break-words">{c.roi}</div>
                 </div>
               </div>
-              <div className="border-l-2 border-gold pl-4 italic text-foreground/90">
+              <div className="border-l-2 border-gold pl-4 italic text-sm sm:text-base text-foreground/90">
                 <Quote className="text-gold mb-2" size={16} />
                 {c.quote}
               </div>
