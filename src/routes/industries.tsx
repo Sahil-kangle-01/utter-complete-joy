@@ -31,20 +31,20 @@ function IndustriesPage() {
         sub="Six industry verticals. One operating layer. Every system tuned to the technical, regulatory, and commercial reality of Indian manufacturing."
       />
 
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto space-y-6">
+      <section className="py-10 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto space-y-5 sm:space-y-6">
           {industries.map(({ Icon, name, stat, problems, systems, use }, i) => (
-            <div key={name} className="glass-card rounded-2xl p-8 md:p-10 grid md:grid-cols-12 gap-6">
-              <div className="md:col-span-1">
+            <div key={name} className="glass-card rounded-2xl p-6 sm:p-8 md:p-10 grid md:grid-cols-12 gap-5 sm:gap-6">
+              <div className="md:col-span-2 flex md:block">
                 <div className="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center">
                   <Icon className="text-gold" size={26} />
                 </div>
               </div>
-              <div className="md:col-span-7">
-                <div className="text-xs tracking-[0.2em] text-muted-foreground mb-2">0{i + 1} · {stat}</div>
-                <h3 className="text-2xl font-bold mb-3">{name}</h3>
-                <p className="text-muted-foreground mb-3"><span className="text-foreground font-semibold">Problems they face — </span>{problems}</p>
-                <p className="text-muted-foreground"><span className="text-foreground font-semibold">Example — </span>{use}</p>
+              <div className="md:col-span-6">
+                <div className="text-[10px] sm:text-xs tracking-[0.2em] text-muted-foreground mb-2">0{i + 1} · {stat}</div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">{name}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-3"><span className="text-foreground font-semibold">Problems they face — </span>{problems}</p>
+                <p className="text-sm sm:text-base text-muted-foreground"><span className="text-foreground font-semibold">Example — </span>{use}</p>
               </div>
               <div className="md:col-span-4">
                 <div className="text-xs tracking-[0.2em] text-gold mb-3">SYSTEMS</div>
