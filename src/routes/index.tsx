@@ -28,12 +28,12 @@ const systems = [
 ] as const;
 
 const industries = [
-  { name: "HVAC & Refrigeration", icon: Snowflake },
-  { name: "Pharma Manufacturing", icon: FlaskConical },
-  { name: "Auto Components", icon: Cog },
-  { name: "Industrial Equipment", icon: Factory },
-  { name: "Calibration Labs", icon: Ruler },
-  { name: "Cold Chain & Logistics", icon: Truck },
+  { name: "HVAC & Refrigeration", icon: Snowflake, stat: "18% → 35%", label: "RFQ win rate" },
+  { name: "Pharma Manufacturing", icon: FlaskConical, stat: "Zero lapses", label: "cert renewals missed" },
+  { name: "Auto Components", icon: Cog, stat: "<60s", label: "quote turnaround" },
+  { name: "Industrial Equipment", icon: Factory, stat: "0.5% → 8%", label: "site conversion" },
+  { name: "Calibration Labs", icon: Ruler, stat: "₹34.5L", label: "ARR recovered" },
+  { name: "Cold Chain & Logistics", icon: Truck, stat: "15% → 7%", label: "churn reduction" },
 ];
 
 const trustItems = [
