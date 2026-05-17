@@ -45,10 +45,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 border-t border-border">
-        <div className="max-w-4xl mx-auto text-center mb-14">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
+        <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-14">
           <div className="text-xs tracking-[0.3em] text-gold mb-4">OUR MISSION</div>
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
             To give every Indian industrial business the same{" "}
             <span className="text-gradient">AI leverage</span> that Fortune 500 companies have
             had for years.
@@ -56,19 +56,19 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 border-t border-border">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-12 sm:mb-14">
             <div className="text-xs tracking-[0.3em] text-gold mb-4">VALUES</div>
-            <h2 className="text-3xl md:text-5xl font-bold">What we are built on.</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">What we are built on.</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map(({ Icon, title, body }) => (
-              <div key={title} className="glass-card p-7 rounded-xl">
+              <div key={title} className="glass-card p-6 sm:p-7 rounded-xl">
                 <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-5">
                   <Icon className="text-primary" size={22} />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-2">{title}</h3>
                 <p className="text-muted-foreground text-sm">{body}</p>
               </div>
             ))}
