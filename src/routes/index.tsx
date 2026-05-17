@@ -73,36 +73,36 @@ function HomePage() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-20 sm:pt-16 overflow-hidden">
         <HeroBackground />
         <SpectraNoise opacity={0.04} />
-        <div className="relative max-w-6xl mx-auto px-6 py-20 text-center fade-up">
-          <div className="text-xs tracking-[0.4em] text-gold mb-8">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center fade-up">
+          <div className="text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-gold mb-6 sm:mb-8">
             INDUXTRON · BUSINESS AI SYSTEMS
           </div>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
             <span className="block">WHERE INDUSTRY</span>
             <span className="block text-gradient">MEETS INTELLIGENCE</span>
           </h1>
-          <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-6 sm:mt-8 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed px-2">
             AI systems built for Indian industrial businesses. Engineered for results.
             Available by application only.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/apply" className="px-8 py-4 rounded-md bg-primary text-primary-foreground font-medium hover:glow-primary transition-shadow">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+            <Link to="/apply" className="px-6 sm:px-8 py-3 sm:py-4 rounded-md bg-primary text-primary-foreground font-medium hover:glow-primary transition-shadow">
               Request Access
             </Link>
-            <Link to="/systems" className="px-8 py-4 rounded-md border border-border text-foreground hover:bg-accent transition-colors">
+            <Link to="/systems" className="px-6 sm:px-8 py-3 sm:py-4 rounded-md border border-border text-foreground hover:bg-accent transition-colors">
               Explore Systems
             </Link>
           </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-mono text-text-accent">
+          <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2 text-xs sm:text-sm font-mono text-text-accent">
             <span>5 AI Systems</span><span className="text-border">|</span>
             <span>90-Day ROI</span><span className="text-border">|</span>
             <span>Select Businesses Only</span>
           </div>
         </div>
-        <ChevronDown className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce" />
+        <ChevronDown className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce" />
       </section>
 
       {/* TRUST TICKER */}
