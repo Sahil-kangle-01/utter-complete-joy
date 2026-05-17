@@ -54,22 +54,22 @@ function ProductPage() {
       />
 
       {/* Problem / Solution */}
-      <section className="py-20 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-          <div className="glass-card rounded-2xl p-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="glass-card rounded-2xl p-6 sm:p-8">
             <div className="text-xs tracking-[0.3em] text-destructive mb-3">THE PROBLEM</div>
-            <p className="text-lg text-muted-foreground leading-relaxed">{p.problem}</p>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">{p.problem}</p>
           </div>
-          <div className="glass-card rounded-2xl p-8" style={{ borderColor: "var(--gold)" }}>
+          <div className="glass-card rounded-2xl p-6 sm:p-8" style={{ borderColor: "var(--gold)" }}>
             <div className="text-xs tracking-[0.3em] text-gold mb-3">THE SOLUTION</div>
-            <p className="text-lg text-foreground leading-relaxed">{p.solution}</p>
+            <p className="text-base sm:text-lg text-foreground leading-relaxed">{p.solution}</p>
           </div>
         </div>
       </section>
 
       {/* Flow */}
       {p.flow && (
-        <section className="py-20 px-6 border-t border-border">
+        <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">How it works.</h2>
             <ol className="space-y-4">
@@ -85,16 +85,16 @@ function ProductPage() {
       )}
 
       {/* Capabilities */}
-      <section className="py-20 px-6 border-t border-border">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Everything your team needs.
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {p.capabilities.map((c, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 flex gap-4">
+              <div key={i} className="glass-card rounded-xl p-5 sm:p-6 flex gap-4">
                 <Check className="text-primary shrink-0 mt-0.5" size={20} />
-                <p className="text-foreground/90">{c}</p>
+                <p className="text-sm sm:text-base text-foreground/90">{c}</p>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ function ProductPage() {
 
       {/* Table */}
       {p.table && (
-        <section className="py-20 px-6 border-t border-border">
+        <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{p.table.title}</h2>
             <div className="glass-card rounded-2xl overflow-hidden">
@@ -137,21 +137,21 @@ function ProductPage() {
       )}
 
       {/* Impact */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-xs tracking-[0.3em] text-gold mb-6">REVENUE IMPACT</div>
-          <div className="font-display text-5xl md:text-7xl font-bold text-gradient mb-4">
+          <div className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gradient mb-4 break-words">
             {p.impact.value}
           </div>
-          <p className="text-xl text-foreground mb-6">{p.impact.label}</p>
+          <p className="text-lg sm:text-xl text-foreground mb-6">{p.impact.label}</p>
           {p.impact.details.map((d, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mt-3">{d}</p>
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3">{d}</p>
           ))}
         </div>
       </section>
 
       {/* Other systems */}
-      <section className="py-16 px-6 border-t border-border">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="text-xs tracking-[0.3em] text-gold mb-6">OTHER SYSTEMS</div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

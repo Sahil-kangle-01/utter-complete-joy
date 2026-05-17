@@ -32,14 +32,14 @@ function ApplyPage() {
   if (submitted) {
     return (
       <Layout>
-        <section className="pt-40 pb-32 px-6">
+        <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
           <div className="max-w-2xl mx-auto text-center fade-up">
             <CheckCircle2 className="mx-auto text-gold mb-6" size={56} />
-            <h1 className="text-4xl md:text-5xl font-bold mb-5">Application received.</h1>
-            <p className="text-lg text-muted-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5">Application received.</h1>
+            <p className="text-base sm:text-lg text-muted-foreground mb-3">
               We will review and respond within 48 hours.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm sm:text-base">
               In the meantime, explore our <a href="/case-studies" className="text-primary hover:underline">case studies</a>.
             </p>
           </div>
@@ -57,12 +57,12 @@ function ApplyPage() {
         sub="We review every application personally. We work with those who are serious about transformation — not just those looking for a tool."
       />
 
-      <section className="px-6 pb-24">
+      <section className="px-4 sm:px-6 pb-20 sm:pb-24">
         <form
           onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-          className="max-w-3xl mx-auto glass-card rounded-2xl p-8 md:p-12 space-y-6"
+          className="max-w-3xl mx-auto glass-card rounded-2xl p-6 sm:p-8 md:p-12 space-y-6"
         >
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <Input label="Full Name" name="name" required />
             <Input label="Designation / Role" name="role" required />
             <Input label="Company Name" name="company" required />
@@ -110,7 +110,7 @@ function ApplyPage() {
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <Select label="How did you hear about Induxtron?" name="source" options={sources} />
             <Input label="Phone (WhatsApp preferred)" name="phone" type="tel" required />
             <Input label="Email" name="email" type="email" required />

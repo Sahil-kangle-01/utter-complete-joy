@@ -3,8 +3,8 @@ import logo from "@/assets/induxtron-logo.png";
 
 export function Footer() {
   return (
-    <footer style={{ background: "var(--bg-deep)" }} className="border-t border-border mt-24">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+    <footer style={{ background: "var(--bg-deep)" }} className="border-t border-border mt-20 sm:mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
         <div>
           <img src={logo} alt="Induxtron" className="h-12 w-auto mb-3" />
           <div className="font-display font-bold tracking-wider text-foreground text-lg">
@@ -60,9 +60,9 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-muted-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Induxtron Business Systems. All rights reserved.</div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
             <span>Privacy</span>
             <span>Terms</span>
             <span className="text-gold">Made in Maharashtra</span>

@@ -30,23 +30,23 @@ function SystemsPage() {
         sub="Each system targets one critical revenue leak in your business. Deployed individually — or as a complete operating layer."
       />
 
-      <section className="py-12 px-6">
+      <section className="py-10 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-5">
           {systems.map((s, i) => (
             <Link
               key={s.slug}
               to="/systems/$slug"
               params={{ slug: s.slug }}
-              className="glass-card rounded-2xl p-8 md:p-10 grid md:grid-cols-12 gap-6 items-center group"
+              className="glass-card rounded-2xl p-6 sm:p-8 md:p-10 grid md:grid-cols-12 gap-5 sm:gap-6 items-center group"
             >
-              <div className="md:col-span-1 font-mono text-3xl text-gradient">0{i + 1}</div>
+              <div className="md:col-span-1 font-mono text-2xl sm:text-3xl text-gradient">0{i + 1}</div>
               <div className="md:col-span-7">
-                <div className="text-gold text-xs tracking-[0.3em] mb-2">{s.name.toUpperCase()}</div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">{s.title}</h3>
-                <p className="text-muted-foreground">{s.line}</p>
+                <div className="text-gold text-[10px] sm:text-xs tracking-[0.3em] mb-2">{s.name.toUpperCase()}</div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{s.title}</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">{s.line}</p>
               </div>
               <div className="md:col-span-3 space-y-1">
-                <div className="font-mono text-2xl text-gradient">{s.roi}</div>
+                <div className="font-mono text-xl sm:text-2xl text-gradient break-words">{s.roi}</div>
                 <div className="text-xs text-muted-foreground">{s.metric}</div>
                 <div className="text-xs text-muted-foreground">Build: {s.build}</div>
               </div>
