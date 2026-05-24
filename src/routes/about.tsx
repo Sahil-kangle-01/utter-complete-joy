@@ -6,8 +6,31 @@ import sahilPhoto from "@/assets/sahil-kangle.jpeg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Induxtron" },
-      { name: "description", content: "Built in Aurangabad. For Aurangabad. For India. Induxtron gives Indian industrial businesses world-class AI leverage." },
+      { title: "About Induxtron — Built in Aurangabad for Indian Industry" },
+      { name: "description", content: "Founded by Sahil Kangle in Aurangabad, Induxtron gives Indian industrial businesses world-class AI leverage. Application-only client roster." },
+      { name: "keywords", content: "Induxtron, Sahil Kangle, AI Aurangabad, industrial AI India, manufacturing AI founder" },
+      { property: "og:title", content: "About Induxtron — Built in Aurangabad for Indian Industry" },
+      { property: "og:description", content: "Founded by Sahil Kangle. World-class AI leverage for Indian industrial and manufacturing businesses." },
+      { property: "og:url", content: "https://induxtron.lovable.app/about" },
+      { property: "og:type", content: "profile" },
+    ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          mainEntity: {
+            "@type": "Person",
+            name: "Sahil Kangle",
+            jobTitle: "Founder, Induxtron",
+            worksFor: { "@type": "Organization", name: "Induxtron" },
+            sameAs: ["https://www.linkedin.com/in/sahil-kangle"],
+            address: { "@type": "PostalAddress", addressLocality: "Aurangabad", addressCountry: "IN" },
+          },
+        }),
+      },
     ],
   }),
   component: AboutPage,
