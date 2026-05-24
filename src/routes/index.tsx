@@ -214,7 +214,7 @@ function HomePage() {
             {[
               { v: 85, p: "₹", s: "L/yr", l: "QuoteGPT revenue lift" },
               { v: 345, p: "₹", s: "L ARR", l: "CertAlert recurring", small: true },
-              { v: 135, p: "₹", s: " Cr/yr", l: "TenderRadar wins" },
+              { v: 135, p: "₹", s: "L/yr", l: "TenderRadar wins" },
               { v: 96, p: "₹", s: "L saved", l: "ChurnRadar retention" },
             ].map((n, i) => (
               <div key={i} className="px-2 sm:px-4">
