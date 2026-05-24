@@ -5,9 +5,14 @@ import { Snowflake, FlaskConical, Cog, Factory, Ruler, Truck } from "lucide-reac
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries — Induxtron" },
-      { name: "description", content: "Built for HVAC, pharma, auto components, calibration labs, industrial equipment, and cold chain businesses." },
+      { title: "Industries We Serve — HVAC, Pharma, Auto, Calibration, Cold Chain" },
+      { name: "description", content: "Induxtron AI built for six Indian industrial verticals: HVAC contractors, pharma plants, auto component makers, calibration labs, equipment dealers, and cold chain operators." },
+      { name: "keywords", content: "AI for HVAC India, pharma manufacturing AI, auto components AI, calibration lab software, cold chain AI" },
+      { property: "og:title", content: "Industries We Serve — Induxtron" },
+      { property: "og:description", content: "Six verticals. One operating layer. Tuned to Indian industrial reality." },
+      { property: "og:url", content: "https://induxtron.lovable.app/industries" },
     ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/industries" }],
   }),
   component: IndustriesPage,
 });
