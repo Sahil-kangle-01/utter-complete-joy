@@ -12,8 +12,35 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Induxtron — Where Industry Meets Intelligence" },
-      { name: "description", content: "Five AI systems built for Indian industrial businesses. Quote acceleration, certificate renewals, 24x7 sales agents, tender intelligence, churn prediction." },
+      { title: "Induxtron — AI Systems for Indian Industrial & Manufacturing Businesses" },
+      { name: "description", content: "Induxtron builds 5 AI systems for Indian manufacturers: QuoteGPT, CertAlert, IndustrialBot, TenderRadar, ChurnRadar. Measurable ROI in 90 days." },
+      { name: "keywords", content: "AI for manufacturing India, industrial AI systems, RFQ automation, GeM tender alerts, calibration certificate renewal, B2B sales AI, MSME automation" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Induxtron — AI Systems for Indian Industrial Businesses" },
+      { property: "og:description", content: "Five AI systems built for Indian manufacturers. Quote acceleration, certificate renewals, 24×7 sales agents, tender intelligence, churn prediction." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://induxtron.lovable.app/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Induxtron — AI Systems for Indian Industrial Businesses" },
+      { name: "twitter:description", content: "Five AI systems built for Indian manufacturers. Measurable ROI within 90 days." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://induxtron.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Induxtron",
+          url: "https://induxtron.lovable.app/",
+          description: "AI systems for Indian industrial and manufacturing businesses.",
+          founder: { "@type": "Person", name: "Sahil Kangle", sameAs: "https://www.linkedin.com/in/sahil-kangle" },
+          areaServed: "IN",
+          knowsAbout: ["RFQ automation", "Calibration certificate renewal", "GeM tender intelligence", "Customer churn prediction", "Industrial AI chatbot"],
+        }),
+      },
     ],
   }),
   component: HomePage,
