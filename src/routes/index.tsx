@@ -23,7 +23,7 @@ const systems = [
   { slug: "quotegpt", name: "QuoteGPT", title: "Quote Acceleration", line: "RFQ to quote in 60 seconds", roi: "Win rate 18% → 35%", build: "4–6 Weeks" },
   { slug: "certalert", name: "CertAlert", title: "Revenue Protection", line: "Never lose a cert renewal", roi: "Renewal 65% → 88%", build: "3–5 Weeks" },
   { slug: "industrialbot", name: "IndustrialBot", title: "24×7 Sales Agent", line: "Website converts while you sleep", roi: "0.5% → 8% conversion", build: "3–4 Weeks" },
-  { slug: "tenderradar", name: "TenderRadar", title: "Tender Intelligence", line: "Never miss a GeM tender", roi: "₹1.35 Cr / yr", build: "5–7 Weeks" },
+  { slug: "tenderradar", name: "TenderRadar", title: "Tender Intelligence", line: "Never miss a GeM tender", roi: "₹135 L / yr", build: "5–7 Weeks" },
   { slug: "churnradar", name: "ChurnRadar", title: "Retention AI", line: "Know before clients go silent", roi: "Churn 15% → 7%", build: "4–6 Weeks" },
 ] as const;
 

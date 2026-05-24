@@ -129,7 +129,7 @@ export const products: Record<string, ProductSpec> = {
     headline: "Never miss a GeM or government tender",
     highlight: "relevant to your products.",
     sub: "Government procurement through GeM crossed ₹4 Lakh Crore in FY2024. Most MSMEs miss 80% of opportunities they are qualified to win. TenderRadar changes that.",
-    stats: ["15+ Portals Daily", "₹1.35 Cr / yr", "WhatsApp Alerts"],
+    stats: ["15+ Portals Daily", "₹135 L / yr", "WhatsApp Alerts"],
     problem: "Tender portals are fragmented. Listings are buried. Your team checks two of them, twice a week. Eighty percent of relevant opportunities pass by unseen.",
     solution: "TenderRadar scans 15+ national, state, and sector portals daily. AI filters by your product catalogue, eligibility, and value range. Relevant tenders ping your sales head on WhatsApp the moment they go live.",
     capabilities: [
@@ -141,7 +141,7 @@ export const products: Record<string, ProductSpec> = {
       "Document checklist auto-generated for each tender type",
     ],
     impact: {
-      value: "₹1.35 Crore / yr",
+      value: "₹135 Lakhs / yr",
       label: "From a previously untapped channel",
       details: [
         "3 winnable tenders per month at ₹15 Lakhs average value, 25% win rate = ₹11.25 Lakhs additional monthly revenue.",
