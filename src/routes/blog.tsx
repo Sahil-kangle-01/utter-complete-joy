@@ -5,8 +5,26 @@ import { ArrowRight, Clock } from "lucide-react";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — Induxtron Insights" },
-      { name: "description", content: "Insights for Indian industrial businesses. AI strategy, industry analysis, product updates, case studies." },
+      { title: "Insights & Field Notes — Induxtron Blog" },
+      { name: "description", content: "Industry insights, AI strategy, and case studies for Indian industrial businesses. Field notes from Induxtron deployments across HVAC, pharma, calibration, auto and cold chain." },
+      { name: "keywords", content: "industrial AI blog India, RFQ automation insights, GeM tender strategy, manufacturing AI case studies" },
+      { property: "og:title", content: "Insights & Field Notes — Induxtron Blog" },
+      { property: "og:description", content: "Industry insights and AI strategy for Indian manufacturers." },
+      { property: "og:url", content: "https://induxtron.lovable.app/blog" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Induxtron Insights",
+          url: "https://induxtron.lovable.app/blog",
+          publisher: { "@type": "Organization", name: "Induxtron" },
+        }),
+      },
     ],
   }),
   component: BlogPage,

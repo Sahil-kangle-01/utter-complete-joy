@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemsIndexRouteImport } from './routes/systems.index'
 import { Route as SystemsSlugRouteImport } from './routes/systems.$slug'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/systems/$slug': typeof SystemsSlugRoute
   '/systems/': typeof SystemsIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/systems/$slug': typeof SystemsSlugRoute
   '/systems': typeof SystemsIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/systems/$slug': typeof SystemsSlugRoute
   '/systems/': typeof SystemsIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/industries'
+    | '/sitemap.xml'
     | '/systems/$slug'
     | '/systems/'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/industries'
+    | '/sitemap.xml'
     | '/systems/$slug'
     | '/systems'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/industries'
+    | '/sitemap.xml'
     | '/systems/$slug'
     | '/systems/'
   fileRoutesById: FileRoutesById
@@ -143,12 +155,20 @@ export interface RootRouteChildren {
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SystemsSlugRoute: typeof SystemsSlugRoute
   SystemsIndexRoute: typeof SystemsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SystemsSlugRoute: SystemsSlugRoute,
   SystemsIndexRoute: SystemsIndexRoute,
 }

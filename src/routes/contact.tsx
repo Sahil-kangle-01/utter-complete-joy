@@ -6,8 +6,34 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Induxtron" },
-      { name: "description", content: "Get in touch with Induxtron. We respond to every message within 24 hours." },
+      { title: "Contact Induxtron — Aurangabad AI Studio" },
+      { name: "description", content: "Reach Induxtron via email, phone, or WhatsApp. Based in Aurangabad, Maharashtra. We respond to every message within 24 hours." },
+      { name: "keywords", content: "Induxtron contact, AI studio Aurangabad, industrial AI consultation India" },
+      { property: "og:title", content: "Contact Induxtron — Aurangabad AI Studio" },
+      { property: "og:description", content: "Email, phone, or WhatsApp. 24-hour response. Based in Aurangabad." },
+      { property: "og:url", content: "https://induxtron.lovable.app/contact" },
+    ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Induxtron",
+            url: "https://induxtron.lovable.app",
+            contactPoint: [{
+              "@type": "ContactPoint",
+              contactType: "sales",
+              areaServed: "IN",
+              availableLanguage: ["English", "Hindi", "Marathi"],
+            }],
+            address: { "@type": "PostalAddress", addressLocality: "Aurangabad", addressRegion: "MH", addressCountry: "IN" },
+          },
+        }),
+      },
     ],
   }),
   component: ContactPage,

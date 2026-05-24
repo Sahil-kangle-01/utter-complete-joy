@@ -6,9 +6,15 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/apply")({
   head: () => ({
     meta: [
-      { title: "Apply for Access — Induxtron" },
-      { name: "description", content: "Apply for access to Induxtron AI Systems. We review every application personally. 48-hour response." },
+      { title: "Apply for Access — Induxtron AI Systems" },
+      { name: "description", content: "Application-only access to Induxtron AI systems. Personally reviewed by Sahil Kangle. 48-hour response window." },
+      { name: "keywords", content: "Induxtron apply, AI systems access India, industrial AI consulting" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Apply for Access — Induxtron AI Systems" },
+      { property: "og:description", content: "Application-only access. We review every application personally and respond in 48 hours." },
+      { property: "og:url", content: "https://induxtron.lovable.app/apply" },
     ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/apply" }],
   }),
   component: ApplyPage,
 });
