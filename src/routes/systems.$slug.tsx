@@ -6,11 +6,37 @@ import { Check, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/systems/$slug")({
   head: ({ params }) => {
     const p = products[params.slug];
+    const url = `https://induxtron.lovable.app/systems/${params.slug}`;
+    const title = p ? `${p.name} — ${p.tag.split("—")[1]?.trim() ?? "Induxtron AI System"} | Induxtron` : "System — Induxtron";
+    const desc = p?.sub ?? "Induxtron AI system for Indian industrial businesses.";
     return {
       meta: [
-        { title: p ? `${p.name} — Induxtron` : "System — Induxtron" },
-        { name: "description", content: p?.sub ?? "Induxtron AI system" },
+        { title },
+        { name: "description", content: desc },
+        { name: "keywords", content: p ? `${p.name}, ${p.tag}, AI for Indian industry, ${p.stats.join(", ")}` : "Induxtron AI" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: desc },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "product" },
       ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: p
+        ? [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Product",
+                name: p.name,
+                description: p.sub,
+                brand: { "@type": "Brand", name: "Induxtron" },
+                category: "Business AI System",
+                url,
+                offers: { "@type": "Offer", availability: "https://schema.org/LimitedAvailability", url: "https://induxtron.lovable.app/apply" },
+              }),
+            },
+          ]
+        : [],
     };
   },
   loader: ({ params }): { product: ProductSpec } => {
