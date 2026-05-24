@@ -6,9 +6,14 @@ import { useState } from "react";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Induxtron" },
-      { name: "description", content: "Real results. Real businesses. Real rupees. Induxtron deployments across HVAC, pharma, calibration, and dealer networks." },
+      { title: "Case Studies — Real ROI from Induxtron AI Deployments" },
+      { name: "description", content: "Six anonymised deployments across HVAC, pharma, calibration, auto, equipment and cold chain. Measurable rupee ROI within 90 days." },
+      { name: "keywords", content: "AI case studies India manufacturing, RFQ automation ROI, calibration renewal case study, GeM tender wins" },
+      { property: "og:title", content: "Case Studies — Real ROI from Induxtron AI Deployments" },
+      { property: "og:description", content: "Six deployments. Real numbers. Real rupees. Across Maharashtra industry." },
+      { property: "og:url", content: "https://induxtron.lovable.app/case-studies" },
     ],
+    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/case-studies" }],
   }),
   component: CaseStudiesPage,
 });
