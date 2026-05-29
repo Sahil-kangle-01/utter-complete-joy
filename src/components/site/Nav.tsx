@@ -43,8 +43,6 @@ export function Nav() {
           {links.map((l) => {
             const active =
               l.to === "/"
-            const active =
-              l.to === "/"
                 ? location.pathname === "/"
                 : location.pathname.startsWith(l.to);
             return (
