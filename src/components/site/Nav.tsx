@@ -35,12 +35,14 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-display font-bold tracking-wider text-foreground">
-          <img src={logo} alt="Induxtron" className="h-8 w-auto" />
-          <span className="hidden sm:inline">INDUXTRON</span>
         <Link to="/" className="flex items-center font-display font-bold tracking-wider text-foreground">
           <img src={logo} alt="Induxtron" className="h-8 w-auto" />
         </Link>
+
+        <div className="hidden md:flex items-center gap-8 text-sm">
+          {links.map((l) => {
+            const active =
+              l.to === "/"
             const active =
               l.to === "/"
                 ? location.pathname === "/"
