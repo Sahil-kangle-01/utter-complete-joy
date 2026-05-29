@@ -20,15 +20,16 @@ export const Route = createFileRoute("/about")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
           mainEntity: {
-            "@type": "Person",
-            name: "Sahil Kangle",
-            jobTitle: "Founder, Induxtron",
-            worksFor: { "@type": "Organization", name: "Induxtron" },
-            sameAs: ["https://www.linkedin.com/in/sahil-kangle"],
+            "@type": "Organization",
+            name: "Induxtron",
+            founder: [
+              { "@type": "Person", name: "Sahil Kangle", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sahil-kangle"] },
+              { "@type": "Person", name: "Sudesh Dahale", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sudesh-dahale-240384257/"] },
+              { "@type": "Person", name: "Sakshi Jomivale", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sakshi-jomivale/"] },
+            ],
             address: { "@type": "PostalAddress", addressLocality: "Aurangabad", addressCountry: "IN" },
           },
         }),
