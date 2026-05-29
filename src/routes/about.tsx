@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHero, CTA } from "@/components/site/Layout";
 import { Linkedin, Zap, Target, Shield, Award } from "lucide-react";
 import sahilPhoto from "@/assets/sahil-kangle.jpeg";
+import sudeshPhoto from "@/assets/sudesh-dahale.png";
+import sakshiPhoto from "@/assets/sakshi-jomivale.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -18,15 +20,16 @@ export const Route = createFileRoute("/about")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
           mainEntity: {
-            "@type": "Person",
-            name: "Sahil Kangle",
-            jobTitle: "Founder, Induxtron",
-            worksFor: { "@type": "Organization", name: "Induxtron" },
-            sameAs: ["https://www.linkedin.com/in/sahil-kangle"],
+            "@type": "Organization",
+            name: "Induxtron",
+            founder: [
+              { "@type": "Person", name: "Sahil Kangle", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sahil-kangle"] },
+              { "@type": "Person", name: "Sudesh Dahale", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sudesh-dahale-240384257/"] },
+              { "@type": "Person", name: "Sakshi Jomivale", jobTitle: "Co-Founder", sameAs: ["https://www.linkedin.com/in/sakshi-jomivale/"] },
+            ],
             address: { "@type": "PostalAddress", addressLocality: "Aurangabad", addressCountry: "IN" },
           },
         }),
@@ -100,31 +103,49 @@ function AboutPage() {
       </section>
 
       <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
-        <div className="max-w-4xl mx-auto glass-card rounded-2xl p-6 sm:p-10 md:p-14 grid md:grid-cols-3 gap-8 sm:gap-10 items-center">
-          <div className="md:col-span-1">
-            <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/30 to-gold/20 max-w-xs mx-auto md:max-w-none">
-              <img
-                src={sahilPhoto}
-                alt="Sahil Kangle, Founder of Induxtron"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 sm:mb-14">
+            <div className="text-xs tracking-[0.3em] text-gold mb-4">CO-FOUNDERS</div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">The team behind Induxtron.</h2>
           </div>
-          <div className="md:col-span-2 text-center md:text-left">
-            <div className="text-xs tracking-[0.3em] text-gold mb-3">FOUNDER</div>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2">Sahil Kangle</h3>
-            <p className="text-muted-foreground mb-5 text-sm sm:text-base">
-              Founder, Induxtron Business Systems. Building AI infrastructure for the
-              industrial businesses of Maharashtra and beyond.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/sahil-kangle"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary text-sm hover:gap-3 transition-all"
-            >
-              <Linkedin size={16} /> Connect on LinkedIn
-            </a>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sahil Kangle",
+                photo: sahilPhoto,
+                linkedin: "https://www.linkedin.com/in/sahil-kangle",
+                bio: "Co-Founder, Induxtron Business Systems. Building AI infrastructure for the industrial businesses of Maharashtra and beyond.",
+              },
+              {
+                name: "Sudesh Dahale",
+                photo: sudeshPhoto,
+                linkedin: "https://www.linkedin.com/in/sudesh-dahale-240384257/",
+                bio: "Co-Founder, Induxtron Business Systems. Engineering reliable AI systems for real-world industrial operations.",
+              },
+              {
+                name: "Sakshi Jomivale",
+                photo: sakshiPhoto,
+                linkedin: "https://www.linkedin.com/in/sakshi-jomivale/",
+                bio: "Co-Founder, Induxtron Business Systems. Driving product, design, and customer success for Indian industry.",
+              },
+            ].map((f) => (
+              <div key={f.name} className="glass-card rounded-2xl p-6 sm:p-7 text-center">
+                <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/30 to-gold/20 max-w-[200px] mx-auto mb-5">
+                  <img src={f.photo} alt={`${f.name}, Co-Founder of Induxtron`} className="w-full h-full object-cover" />
+                </div>
+                <div className="text-xs tracking-[0.3em] text-gold mb-2">CO-FOUNDER</div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">{f.name}</h3>
+                <p className="text-muted-foreground mb-4 text-sm">{f.bio}</p>
+                <a
+                  href={f.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary text-sm hover:gap-3 transition-all"
+                >
+                  <Linkedin size={16} /> Connect on LinkedIn
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
