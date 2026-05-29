@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHero, CTA } from "@/components/site/Layout";
 import { Linkedin, Zap, Target, Shield, Award } from "lucide-react";
 import sahilPhoto from "@/assets/sahil-kangle.jpeg";
-
+import sahilPhoto from "@/assets/sahil-kangle.jpeg";
+import sudeshPhoto from "@/assets/sudesh-dahale.png";
+import sakshiPhoto from "@/assets/sakshi-jomivale.jpeg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
