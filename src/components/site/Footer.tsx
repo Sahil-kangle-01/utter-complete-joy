@@ -6,7 +6,7 @@ export function Footer() {
     <footer style={{ background: "var(--bg-deep)" }} className="border-t border-border mt-20 sm:mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
         <div>
-          <img src={logo} alt="Induxtron" className="h-12 w-auto mb-3" />
+          <img src={logo} alt="Induxtron" className="h-20 w-auto mb-3" />
           <p className="mt-3 text-xs tracking-[0.2em] text-gold">
             WHERE INDUSTRY MEETS INTELLIGENCE
           </p>
