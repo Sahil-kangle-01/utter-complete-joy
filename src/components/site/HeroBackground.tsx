@@ -105,7 +105,7 @@ export function HeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-80">
       <div className="absolute inset-0 grid-bg opacity-40" />
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <div
