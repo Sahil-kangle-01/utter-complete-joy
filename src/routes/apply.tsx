@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { submitApply } from "@/lib/leads.functions";
 
 export const Route = createFileRoute("/apply")({
   head: () => ({
@@ -31,9 +33,44 @@ const sources = ["LinkedIn", "Referral", "Web search", "Industry event", "Other"
 function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const send = useServerFn(submitApply);
 
   const toggle = (s: string) =>
     setSelected((arr) => (arr.includes(s) ? arr.filter((x) => x !== s) : [...arr, s]));
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    try {
+      const fd = new FormData(e.currentTarget);
+      const challenge = (e.currentTarget.querySelector("textarea") as HTMLTextAreaElement | null)?.value ?? "";
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          role: String(fd.get("role") ?? ""),
+          company: String(fd.get("company") ?? ""),
+          website: String(fd.get("website") ?? ""),
+          city: String(fd.get("city") ?? ""),
+          industry: String(fd.get("industry") ?? ""),
+          team_size: String(fd.get("team") ?? ""),
+          revenue: String(fd.get("revenue") ?? ""),
+          systems: selected,
+          challenge,
+          source: String(fd.get("source") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          email: String(fd.get("email") ?? ""),
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not submit your application. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   if (submitted) {
     return (
@@ -65,7 +102,7 @@ function ApplyPage() {
 
       <section className="px-4 sm:px-6 pb-20 sm:pb-24">
         <form
-          onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+          onSubmit={onSubmit}
           className="max-w-3xl mx-auto glass-card rounded-2xl p-6 sm:p-8 md:p-12 space-y-6"
         >
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
@@ -122,11 +159,14 @@ function ApplyPage() {
             <Input label="Email" name="email" type="email" required />
           </div>
 
+          {error && <div className="text-sm text-red-400 text-center">{error}</div>}
+
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-gold text-gold-foreground font-semibold text-lg hover:opacity-90 transition-opacity"
+            disabled={submitting}
+            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-gold text-gold-foreground font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
           >
-            Submit My Application <ArrowRight size={18} />
+            {submitting ? "Sending…" : <>Submit My Application <ArrowRight size={18} /></>}
           </button>
 
           <div className="text-center text-xs text-muted-foreground space-y-1 pt-2">

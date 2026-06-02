@@ -60,8 +60,8 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Induxtron Business Systems. All rights reserved.</div>
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <span>Privacy</span>
-            <span>Terms</span>
+            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-gold transition-colors">Terms</Link>
             <span className="text-gold">Made in Maharashtra</span>
           </div>
         </div>
