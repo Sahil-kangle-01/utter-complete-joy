@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { submitApply } from "@/lib/leads.functions";
 
 export const Route = createFileRoute("/apply")({
   head: () => ({
@@ -31,9 +33,44 @@ const sources = ["LinkedIn", "Referral", "Web search", "Industry event", "Other"
 function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const send = useServerFn(submitApply);
 
   const toggle = (s: string) =>
     setSelected((arr) => (arr.includes(s) ? arr.filter((x) => x !== s) : [...arr, s]));
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    try {
+      const fd = new FormData(e.currentTarget);
+      const challenge = (e.currentTarget.querySelector("textarea") as HTMLTextAreaElement | null)?.value ?? "";
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          role: String(fd.get("role") ?? ""),
+          company: String(fd.get("company") ?? ""),
+          website: String(fd.get("website") ?? ""),
+          city: String(fd.get("city") ?? ""),
+          industry: String(fd.get("industry") ?? ""),
+          team_size: String(fd.get("team") ?? ""),
+          revenue: String(fd.get("revenue") ?? ""),
+          systems: selected,
+          challenge,
+          source: String(fd.get("source") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          email: String(fd.get("email") ?? ""),
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not submit your application. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   if (submitted) {
     return (
