@@ -43,6 +43,37 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const send = useServerFn(submitContact);
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      const system = (form.querySelector("select") as HTMLSelectElement | null)?.value ?? "";
+      const message = (form.querySelector("textarea") as HTMLTextAreaElement | null)?.value ?? "";
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          company: String(fd.get("company") ?? ""),
+          city: String(fd.get("city") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          system_interest: system,
+          message,
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not send. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <Layout>
@@ -62,10 +93,7 @@ function ContactPage() {
                 <p className="text-muted-foreground">We will respond within 24 hours.</p>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-                className="space-y-5"
-              >
+              <form onSubmit={onSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Field label="Name" name="name" required />
                   <Field label="Company" name="company" required />
@@ -96,11 +124,13 @@ function ContactPage() {
                     placeholder="Tell us briefly about your business and what you'd like to solve."
                   />
                 </div>
+                {error && <div className="text-sm text-red-400">{error}</div>}
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 rounded-md bg-primary text-primary-foreground font-medium hover:glow-primary transition-shadow"
+                  disabled={submitting}
+                  className="w-full px-6 py-4 rounded-md bg-primary text-primary-foreground font-medium hover:glow-primary transition-shadow disabled:opacity-50"
                 >
-                  Send Message
+                  {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
             )}
