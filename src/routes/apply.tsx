@@ -102,7 +102,7 @@ function ApplyPage() {
 
       <section className="px-4 sm:px-6 pb-20 sm:pb-24">
         <form
-          onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+          onSubmit={onSubmit}
           className="max-w-3xl mx-auto glass-card rounded-2xl p-6 sm:p-8 md:p-12 space-y-6"
         >
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
@@ -159,11 +159,14 @@ function ApplyPage() {
             <Input label="Email" name="email" type="email" required />
           </div>
 
+          {error && <div className="text-sm text-red-400 text-center">{error}</div>}
+
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-gold text-gold-foreground font-semibold text-lg hover:opacity-90 transition-opacity"
+            disabled={submitting}
+            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-gold text-gold-foreground font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
           >
-            Submit My Application <ArrowRight size={18} />
+            {submitting ? "Sending…" : <>Submit My Application <ArrowRight size={18} /></>}
           </button>
 
           <div className="text-center text-xs text-muted-foreground space-y-1 pt-2">
