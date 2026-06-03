@@ -5,7 +5,30 @@ import { Layout, PageHero } from "@/components/site/Layout";
 import { getAdminLeads } from "@/lib/admin.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
-import { LogOut, ChevronDown, ChevronRight } from "lucide-react";
+import { LogOut, ChevronDown, ChevronRight, Download } from "lucide-react";
+
+function toCSV(rows: Row[], fields: string[]): string {
+  const esc = (v: unknown) => {
+    const s = Array.isArray(v) ? v.join("; ") : v == null ? "" : String(v);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const header = fields.join(",");
+  const body = rows.map((r) => fields.map((f) => esc(r[f])).join(",")).join("\n");
+  return header + "\n" + body;
+}
+
+function downloadCSV(filename: string, csv: string) {
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+const APP_FIELDS = ["created_at", "name", "email", "phone", "company", "role", "website", "city", "industry", "team_size", "revenue", "systems", "source", "challenge"];
+const CONTACT_FIELDS = ["created_at", "name", "email", "phone", "company", "city", "system_interest", "message"];
 
 export const Route = createFileRoute("/_authenticated/admin/leads")({
   head: () => ({
