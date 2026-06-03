@@ -72,12 +72,28 @@ function AdminLeadsPage() {
                 Contacts {data?.contacts && <span className="opacity-70">({data.contacts.length})</span>}
               </TabBtn>
             </div>
-            <button
-              onClick={signOut}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-gold transition-colors"
-            >
-              <LogOut size={14} /> Sign out
-            </button>
+            <div className="flex items-center gap-2">
+              {data?.isAdmin && (
+                <button
+                  onClick={() => {
+                    const isApps = tab === "applications";
+                    const rows = (isApps ? data.applications : data.contacts) as Row[];
+                    const fields = isApps ? APP_FIELDS : CONTACT_FIELDS;
+                    const stamp = new Date().toISOString().slice(0, 10);
+                    downloadCSV(`${isApps ? "applications" : "contacts"}-${stamp}.csv`, toCSV(rows, fields));
+                  }}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-gold hover:border-gold transition-colors"
+                >
+                  <Download size={14} /> Export CSV
+                </button>
+              )}
+              <button
+                onClick={signOut}
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-gold transition-colors"
+              >
+                <LogOut size={14} /> Sign out
+              </button>
+            </div>
           </div>
 
           {isLoading && <div className="glass-card rounded-2xl p-8 text-center text-muted-foreground">Loading…</div>}
