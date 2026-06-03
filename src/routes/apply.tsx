@@ -14,9 +14,9 @@ export const Route = createFileRoute("/apply")({
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Apply for Access — Induxtron AI Systems" },
       { property: "og:description", content: "Application-only access. We review every application personally and respond in 48 hours." },
-      { property: "og:url", content: "https://induxtron.lovable.app/apply" },
+      { property: "og:url", content: "https://induxtron.com/apply" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/apply" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/apply" }],
   }),
   component: ApplyPage,
 });

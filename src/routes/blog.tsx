@@ -10,10 +10,10 @@ export const Route = createFileRoute("/blog")({
       { name: "keywords", content: "industrial AI blog India, RFQ automation insights, GeM tender strategy, manufacturing AI case studies" },
       { property: "og:title", content: "Insights & Field Notes — Induxtron Blog" },
       { property: "og:description", content: "Industry insights and AI strategy for Indian manufacturers." },
-      { property: "og:url", content: "https://induxtron.lovable.app/blog" },
+      { property: "og:url", content: "https://induxtron.com/blog" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/blog" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/blog" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/blog")({
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "Induxtron Insights",
-          url: "https://induxtron.lovable.app/blog",
+          url: "https://induxtron.com/blog",
           publisher: { "@type": "Organization", name: "Induxtron" },
         }),
       },

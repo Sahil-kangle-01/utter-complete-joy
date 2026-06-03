@@ -8,9 +8,9 @@ export const Route = createFileRoute("/terms")({
       { name: "description", content: "The terms that govern use of the Induxtron website and AI systems." },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Terms of Service — Induxtron" },
-      { property: "og:url", content: "https://induxtron.lovable.app/terms" },
+      { property: "og:url", content: "https://induxtron.com/terms" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/terms" }],
   }),
   component: TermsPage,
 });

@@ -10,9 +10,9 @@ export const Route = createFileRoute("/systems/")({
       { name: "keywords", content: "QuoteGPT, CertAlert, IndustrialBot, TenderRadar, ChurnRadar, industrial AI systems, RFQ automation, calibration renewal" },
       { property: "og:title", content: "Five AI Systems for Indian Industry — Induxtron" },
       { property: "og:description", content: "Each system targets one critical revenue leak in your business." },
-      { property: "og:url", content: "https://induxtron.lovable.app/systems" },
+      { property: "og:url", content: "https://induxtron.com/systems" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/systems" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/systems" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -20,11 +20,11 @@ export const Route = createFileRoute("/systems/")({
           "@context": "https://schema.org",
           "@type": "ItemList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "QuoteGPT", url: "https://induxtron.lovable.app/systems/quotegpt" },
-            { "@type": "ListItem", position: 2, name: "CertAlert", url: "https://induxtron.lovable.app/systems/certalert" },
-            { "@type": "ListItem", position: 3, name: "IndustrialBot", url: "https://induxtron.lovable.app/systems/industrialbot" },
-            { "@type": "ListItem", position: 4, name: "TenderRadar", url: "https://induxtron.lovable.app/systems/tenderradar" },
-            { "@type": "ListItem", position: 5, name: "ChurnRadar", url: "https://induxtron.lovable.app/systems/churnradar" },
+            { "@type": "ListItem", position: 1, name: "QuoteGPT", url: "https://induxtron.com/systems/quotegpt" },
+            { "@type": "ListItem", position: 2, name: "CertAlert", url: "https://induxtron.com/systems/certalert" },
+            { "@type": "ListItem", position: 3, name: "IndustrialBot", url: "https://induxtron.com/systems/industrialbot" },
+            { "@type": "ListItem", position: 4, name: "TenderRadar", url: "https://induxtron.com/systems/tenderradar" },
+            { "@type": "ListItem", position: 5, name: "ChurnRadar", url: "https://induxtron.com/systems/churnradar" },
           ],
         }),
       },

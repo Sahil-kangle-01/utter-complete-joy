@@ -11,9 +11,9 @@ export const Route = createFileRoute("/case-studies")({
       { name: "keywords", content: "AI case studies India manufacturing, RFQ automation ROI, calibration renewal case study, GeM tender wins" },
       { property: "og:title", content: "Case Studies — Real ROI from Induxtron AI Deployments" },
       { property: "og:description", content: "Six deployments. Real numbers. Real rupees. Across Maharashtra industry." },
-      { property: "og:url", content: "https://induxtron.lovable.app/case-studies" },
+      { property: "og:url", content: "https://induxtron.com/case-studies" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/case-studies" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/case-studies" }],
   }),
   component: CaseStudiesPage,
 });

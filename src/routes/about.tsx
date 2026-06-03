@@ -13,10 +13,10 @@ export const Route = createFileRoute("/about")({
       { name: "keywords", content: "Induxtron, Sahil Kangle, AI Aurangabad, industrial AI India, manufacturing AI founder" },
       { property: "og:title", content: "About Induxtron — Built in Aurangabad for Indian Industry" },
       { property: "og:description", content: "Founded by Sahil Kangle. World-class AI leverage for Indian industrial and manufacturing businesses." },
-      { property: "og:url", content: "https://induxtron.lovable.app/about" },
+      { property: "og:url", content: "https://induxtron.com/about" },
       { property: "og:type", content: "profile" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/about" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/about" }],
     scripts: [
       {
         type: "application/ld+json",
