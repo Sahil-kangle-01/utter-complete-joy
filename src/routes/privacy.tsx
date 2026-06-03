@@ -8,9 +8,9 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "How Induxtron collects, uses, and protects your information." },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Privacy Policy — Induxtron" },
-      { property: "og:url", content: "https://induxtron.lovable.app/privacy" },
+      { property: "og:url", content: "https://induxtron.com/privacy" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/privacy" }],
   }),
   component: PrivacyPage,
 });

@@ -13,9 +13,9 @@ export const Route = createFileRoute("/contact")({
       { name: "keywords", content: "Induxtron contact, AI studio Aurangabad, industrial AI consultation India" },
       { property: "og:title", content: "Contact Induxtron — Aurangabad AI Studio" },
       { property: "og:description", content: "Email, phone, or WhatsApp. 24-hour response. Based in Aurangabad." },
-      { property: "og:url", content: "https://induxtron.lovable.app/contact" },
+      { property: "og:url", content: "https://induxtron.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/contact")({
           mainEntity: {
             "@type": "Organization",
             name: "Induxtron",
-            url: "https://induxtron.lovable.app",
+            url: "https://induxtron.com",
             contactPoint: [{
               "@type": "ContactPoint",
               contactType: "sales",

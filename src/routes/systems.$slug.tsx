@@ -6,7 +6,7 @@ import { Check, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/systems/$slug")({
   head: ({ params }) => {
     const p = products[params.slug];
-    const url = `https://induxtron.lovable.app/systems/${params.slug}`;
+    const url = `https://induxtron.com/systems/${params.slug}`;
     const title = p ? `${p.name} — ${p.tag.split("—")[1]?.trim() ?? "Induxtron AI System"} | Induxtron` : "System — Induxtron";
     const desc = p?.sub ?? "Induxtron AI system for Indian industrial businesses.";
     return {
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/systems/$slug")({
                 brand: { "@type": "Brand", name: "Induxtron" },
                 category: "Business AI System",
                 url,
-                offers: { "@type": "Offer", availability: "https://schema.org/LimitedAvailability", url: "https://induxtron.lovable.app/apply" },
+                offers: { "@type": "Offer", availability: "https://schema.org/LimitedAvailability", url: "https://induxtron.com/apply" },
               }),
             },
           ]

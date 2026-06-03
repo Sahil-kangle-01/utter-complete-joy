@@ -10,9 +10,9 @@ export const Route = createFileRoute("/industries")({
       { name: "keywords", content: "AI for HVAC India, pharma manufacturing AI, auto components AI, calibration lab software, cold chain AI" },
       { property: "og:title", content: "Industries We Serve — Induxtron" },
       { property: "og:description", content: "Six verticals. One operating layer. Tuned to Indian industrial reality." },
-      { property: "og:url", content: "https://induxtron.lovable.app/industries" },
+      { property: "og:url", content: "https://induxtron.com/industries" },
     ],
-    links: [{ rel: "canonical", href: "https://induxtron.lovable.app/industries" }],
+    links: [{ rel: "canonical", href: "https://induxtron.com/industries" }],
   }),
   component: IndustriesPage,
 });

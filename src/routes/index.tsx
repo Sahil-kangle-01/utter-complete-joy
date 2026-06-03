@@ -19,13 +19,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Induxtron — AI Systems for Indian Industrial Businesses" },
       { property: "og:description", content: "Five AI systems built for Indian manufacturers. Quote acceleration, certificate renewals, 24×7 sales agents, tender intelligence, churn prediction." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://induxtron.lovable.app/" },
+      { property: "og:url", content: "https://induxtron.com/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Induxtron — AI Systems for Indian Industrial Businesses" },
       { name: "twitter:description", content: "Five AI systems built for Indian manufacturers. Measurable ROI within 90 days." },
     ],
     links: [
-      { rel: "canonical", href: "https://induxtron.lovable.app/" },
+      { rel: "canonical", href: "https://induxtron.com/" },
     ],
     scripts: [
       {
@@ -35,10 +35,10 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "Organization",
-              "@id": "https://induxtron.lovable.app/#org",
+              "@id": "https://induxtron.com/#org",
               name: "Induxtron",
-              url: "https://induxtron.lovable.app/",
-              logo: "https://induxtron.lovable.app/favicon.ico",
+              url: "https://induxtron.com/",
+              logo: "https://induxtron.com/favicon.ico",
               description: "AI systems for Indian industrial and manufacturing businesses.",
               founder: { "@type": "Person", name: "Sahil Kangle", sameAs: "https://www.linkedin.com/in/sahil-kangle" },
               foundingLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Aurangabad", addressRegion: "MH", addressCountry: "IN" } },
@@ -48,10 +48,10 @@ export const Route = createFileRoute("/")({
             },
             {
               "@type": "WebSite",
-              "@id": "https://induxtron.lovable.app/#website",
-              url: "https://induxtron.lovable.app/",
+              "@id": "https://induxtron.com/#website",
+              url: "https://induxtron.com/",
               name: "Induxtron",
-              publisher: { "@id": "https://induxtron.lovable.app/#org" },
+              publisher: { "@id": "https://induxtron.com/#org" },
               inLanguage: "en-IN",
             },
           ],
