@@ -5,7 +5,30 @@ import { Layout, PageHero } from "@/components/site/Layout";
 import { getAdminLeads } from "@/lib/admin.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
-import { LogOut, ChevronDown, ChevronRight } from "lucide-react";
+import { LogOut, ChevronDown, ChevronRight, Download } from "lucide-react";
+
+function toCSV(rows: Row[], fields: string[]): string {
+  const esc = (v: unknown) => {
+    const s = Array.isArray(v) ? v.join("; ") : v == null ? "" : String(v);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const header = fields.join(",");
+  const body = rows.map((r) => fields.map((f) => esc(r[f])).join(",")).join("\n");
+  return header + "\n" + body;
+}
+
+function downloadCSV(filename: string, csv: string) {
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+const APP_FIELDS = ["created_at", "name", "email", "phone", "company", "role", "website", "city", "industry", "team_size", "revenue", "systems", "source", "challenge"];
+const CONTACT_FIELDS = ["created_at", "name", "email", "phone", "company", "city", "system_interest", "message"];
 
 export const Route = createFileRoute("/_authenticated/admin/leads")({
   head: () => ({
@@ -49,12 +72,28 @@ function AdminLeadsPage() {
                 Contacts {data?.contacts && <span className="opacity-70">({data.contacts.length})</span>}
               </TabBtn>
             </div>
-            <button
-              onClick={signOut}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-gold transition-colors"
-            >
-              <LogOut size={14} /> Sign out
-            </button>
+            <div className="flex items-center gap-2">
+              {data?.isAdmin && (
+                <button
+                  onClick={() => {
+                    const isApps = tab === "applications";
+                    const rows = (isApps ? data.applications : data.contacts) as Row[];
+                    const fields = isApps ? APP_FIELDS : CONTACT_FIELDS;
+                    const stamp = new Date().toISOString().slice(0, 10);
+                    downloadCSV(`${isApps ? "applications" : "contacts"}-${stamp}.csv`, toCSV(rows, fields));
+                  }}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-gold hover:border-gold transition-colors"
+                >
+                  <Download size={14} /> Export CSV
+                </button>
+              )}
+              <button
+                onClick={signOut}
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-gold transition-colors"
+              >
+                <LogOut size={14} /> Sign out
+              </button>
+            </div>
           </div>
 
           {isLoading && <div className="glass-card rounded-2xl p-8 text-center text-muted-foreground">Loading…</div>}
