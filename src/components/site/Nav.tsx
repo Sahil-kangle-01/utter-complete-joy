@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/induxtron-logo-new.png.asset.json";
+import logoAsset from "@/assets/induxtron-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -36,7 +36,7 @@ export function Nav() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 font-display font-bold tracking-wider text-foreground">
-          <img src={logoAsset.url} alt="Induxtron" className="h-12 sm:h-14 w-auto" />
+          <img src={logoAsset} alt="Induxtron" className="h-12 sm:h-14 w-auto" />
           <span className="text-lg sm:text-xl tracking-[0.2em]">INDUXTRON</span>
         </Link>
 

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/induxtron-logo-new.png.asset.json";
+import logoAsset from "@/assets/induxtron-logo.png";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <img src={logoAsset.url} alt="Induxtron" className="h-20 w-auto" />
+            <img src={logoAsset} alt="Induxtron" className="h-20 w-auto" />
             <span className="font-display font-bold text-xl tracking-[0.2em] text-foreground">INDUXTRON</span>
           </div>
           <p className="mt-3 text-xs tracking-[0.2em] text-gold">
