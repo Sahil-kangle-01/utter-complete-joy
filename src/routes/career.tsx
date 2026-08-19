@@ -65,7 +65,7 @@ function CareerPage() {
       <Layout>
         <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
           <div className="max-w-2xl mx-auto text-center fade-up">
-            <CheckCircle2 className="mx-auto text-gold mb-6" size={56} />
+            <CheckCircle2 className="mx-auto text-[#7C5CFF] mb-6" size={56} />
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5">Application received.</h1>
             <p className="text-base sm:text-lg text-muted-foreground mb-3">
               We'll review your application and reach out if there's a fit.
@@ -125,7 +125,7 @@ function CareerPage() {
             <textarea
               name="message"
               rows={5}
-              className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-primary resize-none"
+              className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-[#7C5CFF] resize-none"
               placeholder="Tell us a bit about yourself and why you'd be a good fit."
             />
           </div>
@@ -135,7 +135,7 @@ function CareerPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-gold text-gold-foreground font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+            className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-md bg-[#7C5CFF] text-white font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
           >
             {submitting ? "Sending…" : <>Submit Application <ArrowRight size={18} /></>}
           </button>
@@ -156,7 +156,7 @@ function Input({ label, name, type = "text", required = false }: { label: string
         name={name}
         type={type}
         required={required}
-        className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-primary"
+        className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-[#7C5CFF]"
       />
     </div>
   );
@@ -172,7 +172,7 @@ function Select({ label, name, options, required = false }: { label: string; nam
         id={name}
         name={name}
         required={required}
-        className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-primary"
+        className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground focus:outline-none focus:border-[#7C5CFF]"
       >
         <option value="">Select…</option>
         {options.map((o) => <option key={o} value={o}>{o}</option>)}
